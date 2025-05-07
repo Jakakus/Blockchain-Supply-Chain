@@ -1,0 +1,38 @@
+{
+  "name": "blockchain-supply-chain",
+  "version": "1.0.0",
+  "description": "Ethereum-based supply chain tracking system with smart contracts for product authentication",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "start": "npm run compile && node src/index.js"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "supply-chain",
+    "smart-contracts",
+    "nft",
+    "authentication"
+  ],
+  "author": "Jakakus",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0",
+    "web3": "^1.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "express": "^4.18.2",
+    "axios": "^1.2.2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.7",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.6"
+  }
+} 
