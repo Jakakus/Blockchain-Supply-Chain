@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Supply Chain Tracker</title>
+    <style>
+        :root {
+            --primary: #F7931A;
+            --secondary: #0D47A1;
+            --tertiary: #1E88E5;
+            --text: #FFFFFF;
+            --dark-bg: #121212;
+            --panel-bg: #1e1e1e;
+            --grid: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #f0f0f0;
+            background-color: var(--dark-bg);
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .dashboard-item {
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dashboard-item h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+        }
+        
+        .visualization {
+            margin-top: 1rem;
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .visualization img {
+            width: 100%;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        button.secondary {
+            background-color: var(--secondary);
+        }
+        
+        .products {
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            color: #f0f0f0;
+        }
+        
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        table th {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status.verified {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        
+        .status.pending {
+            background-color: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+        }
+        
+        .form-container {
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #f0f0f0;
+            font-size: 1rem;
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Blockchain Supply Chain Tracker</h1>
+            <p>Track products securely through the supply chain using Ethereum blockchain</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="dashboard">
+            <div class="dashboard-item">
+                <h2>Active Shipments</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>428</h3>
+                        <p>Active Shipments</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <p>Pending Verification</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>156</h3>
+                        <p>Completed Today</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-item">
+                <h2>Verification Metrics</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>97.2%</h3>
+                        <p>Verification Success Rate</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>Authentication Alerts</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1.2 days</h3>
+                        <p>Average Verification Time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="visualization">
+            <h2>Supply Chain Dashboard</h2>
+            <p>Real-time visualization of product journey times, verification rates, and supply chain incidents</p>
+            <img src="dummy_supply_chain_dashboard.svg" alt="Supply Chain Dashboard">
+        </div>
+        
+        <div class="visualization">
+            <h2>Smart Contract Architecture</h2>
+            <p>Multi-layered smart contract architecture with upgradeable proxy pattern</p>
+            <img src="dummy_smart_contract_architecture.svg" alt="Smart Contract Architecture">
+        </div>
+        
+        <div class="visualization">
+            <h2>Authentication Flow</h2>
+            <p>Step-by-step authentication process with success rates at each verification stage</p>
+            <img src="dummy_authentication_flow.svg" alt="Authentication Flow">
+        </div>
+        
+        <div class="products">
+            <h2>Tracked Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Manufacturer</th>
+                        <th>Current Location</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#0072</td>
+                        <td>Premium Smartphone</td>
+                        <td>TechCorp</td>
+                        <td>Distribution Center, San Francisco</td>
+                        <td><span class="status verified">Verified</span></td>
+                        <td><button>Track</button></td>
+                    </tr>
+                    <tr>
+                        <td>#0073</td>
+                        <td>Designer Handbag</td>
+                        <td>LuxuryBrands</td>
+                        <td>Customs Checkpoint, NYC</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td><button>Track</button></td>
+                    </tr>
+                    <tr>
+                        <td>#0074</td>
+                        <td>Pharmaceutical Supplies</td>
+                        <td>MediCorp</td>
+                        <td>Regional Hospital, Chicago</td>
+                        <td><span class="status verified">Verified</span></td>
+                        <td><button>Track</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="form-container">
+            <h2>Register New Product</h2>
+            <form>
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="Enter product name">
+                </div>
+                <div class="form-group">
+                    <label for="manufacturer">Manufacturer</label>
+                    <input type="text" id="manufacturer" placeholder="Enter manufacturer name">
+                </div>
+                <div class="form-group">
+                    <label for="location">Production Location</label>
+                    <input type="text" id="location" placeholder="Enter production location">
+                </div>
+                <div class="actions">
+                    <button type="submit">Register Product</button>
+                    <button type="button" class="secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Blockchain Supply Chain Tracker | Powered by Ethereum</p>
+        </div>
+    </footer>
+</body>
+</html> 

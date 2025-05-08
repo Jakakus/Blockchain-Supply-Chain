@@ -1,0 +1,152 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#121212" />
+  
+  <!-- Grid lines -->
+  <g stroke="#333333" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="500" y1="0" x2="500" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+    <line x1="700" y1="0" x2="700" y2="500" />
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Blockchain Supply Chain Analytics Dashboard</text>
+  
+  <!-- Chart 1: Transit Time Trends -->
+  <g transform="translate(50, 100)">
+    <text x="150" y="20" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Average Transit Time by Product Type</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="30" x2="50" y2="130" stroke="white" stroke-width="2" />
+    <line x1="50" y1="130" x2="250" y2="130" stroke="white" stroke-width="2" />
+    
+    <!-- Bars -->
+    <rect x="70" y="50" width="20" height="80" fill="#F7931A" />
+    <rect x="100" y="70" width="20" height="60" fill="#F7931A" />
+    <rect x="130" y="40" width="20" height="90" fill="#F7931A" />
+    
+    <rect x="70" y="40" width="20" height="90" fill="#0D47A1" opacity="0.6" />
+    <rect x="100" y="60" width="20" height="70" fill="#0D47A1" opacity="0.6" />
+    <rect x="130" y="30" width="20" height="100" fill="#0D47A1" opacity="0.6" />
+    
+    <rect x="70" y="60" width="20" height="70" fill="#1E88E5" opacity="0.6" />
+    <rect x="100" y="50" width="20" height="80" fill="#1E88E5" opacity="0.6" />
+    <rect x="130" y="65" width="20" height="65" fill="#1E88E5" opacity="0.6" />
+    
+    <!-- Labels -->
+    <text x="80" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Jan</text>
+    <text x="110" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Feb</text>
+    <text x="140" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Mar</text>
+    
+    <!-- Legend -->
+    <rect x="180" y="50" width="10" height="10" fill="#F7931A" />
+    <text x="195" y="60" font-family="Arial" font-size="10" fill="white">Electronics</text>
+    
+    <rect x="180" y="70" width="10" height="10" fill="#0D47A1" />
+    <text x="195" y="80" font-family="Arial" font-size="10" fill="white">Pharmaceuticals</text>
+    
+    <rect x="180" y="90" width="10" height="10" fill="#1E88E5" />
+    <text x="195" y="100" font-family="Arial" font-size="10" fill="white">Luxury Goods</text>
+  </g>
+  
+  <!-- Chart 2: Verification Rates -->
+  <g transform="translate(400, 100)">
+    <text x="150" y="20" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Blockchain Verification Success Rate</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="30" x2="50" y2="130" stroke="white" stroke-width="2" />
+    <line x1="50" y1="130" x2="250" y2="130" stroke="white" stroke-width="2" />
+    
+    <!-- Lines -->
+    <polyline points="50,50 100,45 150,35 200,30 250,25" stroke="#F7931A" stroke-width="3" fill="none" />
+    <polyline points="50,70 100,60 150,55 200,45 250,40" stroke="#0D47A1" stroke-width="3" fill="none" />
+    <polyline points="50,60 100,55 150,45 200,40 250,30" stroke="#1E88E5" stroke-width="3" fill="none" />
+    
+    <!-- Points -->
+    <circle cx="50" cy="50" r="4" fill="#F7931A" />
+    <circle cx="100" cy="45" r="4" fill="#F7931A" />
+    <circle cx="150" cy="35" r="4" fill="#F7931A" />
+    <circle cx="200" cy="30" r="4" fill="#F7931A" />
+    <circle cx="250" cy="25" r="4" fill="#F7931A" />
+    
+    <circle cx="50" cy="70" r="4" fill="#0D47A1" />
+    <circle cx="100" cy="60" r="4" fill="#0D47A1" />
+    <circle cx="150" cy="55" r="4" fill="#0D47A1" />
+    <circle cx="200" cy="45" r="4" fill="#0D47A1" />
+    <circle cx="250" cy="40" r="4" fill="#0D47A1" />
+    
+    <circle cx="50" cy="60" r="4" fill="#1E88E5" />
+    <circle cx="100" cy="55" r="4" fill="#1E88E5" />
+    <circle cx="150" cy="45" r="4" fill="#1E88E5" />
+    <circle cx="200" cy="40" r="4" fill="#1E88E5" />
+    <circle cx="250" cy="30" r="4" fill="#1E88E5" />
+    
+    <!-- Labels -->
+    <text x="50" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Jan</text>
+    <text x="100" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Feb</text>
+    <text x="150" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Mar</text>
+    <text x="200" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Apr</text>
+    <text x="250" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">May</text>
+  </g>
+  
+  <!-- Chart 3: Supply Chain Incidents -->
+  <g transform="translate(50, 300)">
+    <text x="150" y="20" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Supply Chain Incidents Over Time</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="30" x2="50" y2="130" stroke="white" stroke-width="2" />
+    <line x1="50" y1="130" x2="250" y2="130" stroke="white" stroke-width="2" />
+    
+    <!-- Lines -->
+    <polyline points="50,90 100,70 150,80 200,50 250,30" stroke="#F7931A" stroke-width="3" fill="none" />
+    <polyline points="50,100 100,85 150,65 200,45 250,40" stroke="#0D47A1" stroke-width="3" fill="none" />
+    <polyline points="50,110 100,90 150,70 200,60 250,50" stroke="#1E88E5" stroke-width="3" fill="none" />
+    
+    <!-- Points -->
+    <rect x="47" y="90" width="6" height="6" fill="#F7931A" />
+    <rect x="97" y="70" width="6" height="6" fill="#F7931A" />
+    <rect x="147" y="80" width="6" height="6" fill="#F7931A" />
+    <rect x="197" y="50" width="6" height="6" fill="#F7931A" />
+    <rect x="247" y="30" width="6" height="6" fill="#F7931A" />
+    
+    <!-- Labels -->
+    <text x="50" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Jan</text>
+    <text x="100" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Feb</text>
+    <text x="150" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Mar</text>
+    <text x="200" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Apr</text>
+    <text x="250" y="145" font-family="Arial" font-size="10" fill="white" text-anchor="middle">May</text>
+  </g>
+  
+  <!-- Chart 4: Real-time Status -->
+  <g transform="translate(400, 300)">
+    <text x="150" y="20" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Real-time Supply Chain Status</text>
+    
+    <!-- Status table -->
+    <rect x="70" y="40" width="160" height="100" fill="#1e1e1e" stroke="#333333" />
+    
+    <text x="90" y="60" font-family="Arial" font-size="12" fill="white">Active Shipments</text>
+    <text x="210" y="60" font-family="Arial" font-size="12" fill="white" text-anchor="end">428</text>
+    
+    <text x="90" y="80" font-family="Arial" font-size="12" fill="white">Pending Verification</text>
+    <text x="210" y="80" font-family="Arial" font-size="12" fill="white" text-anchor="end">12</text>
+    
+    <text x="90" y="100" font-family="Arial" font-size="12" fill="white">Completed Today</text>
+    <text x="210" y="100" font-family="Arial" font-size="12" fill="white" text-anchor="end">156</text>
+    
+    <text x="90" y="120" font-family="Arial" font-size="12" fill="white">Alerts</text>
+    <text x="210" y="120" font-family="Arial" font-size="12" fill="white" text-anchor="end">3</text>
+    
+    <!-- Bitcoin logo -->
+    <circle cx="150" cy="170" r="20" fill="#F7931A" />
+    <text x="150" y="177" font-family="Arial" font-size="24" fill="#121212" text-anchor="middle">₿</text>
+  </g>
+</svg> 

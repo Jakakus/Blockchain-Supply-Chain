@@ -1,0 +1,35 @@
+{
+  "id": "blockchain-supply-chain",
+  "title": "Blockchain Supply Chain Tracker",
+  "category": "blockchain",
+  "description": "Secure and transparent supply chain tracking system using Ethereum blockchain, smart contracts, and web3 technology.",
+  "longDescription": "Developed a comprehensive supply chain tracking solution using blockchain technology to ensure transparency, authenticity, and security throughout the product journey. This system addresses the growing need for verifiable product origin and handling in global supply chains.\n\n**Smart Contract Architecture:**\n• Implemented an upgradeable proxy pattern for future-proof contract deployment\n• Designed a multi-layered contract structure with separation of concerns\n• Created specialized contracts for product registration, ownership transfer, and verification\n• Implemented robust access control mechanisms with role-based permissions\n\n**Authentication & Security:**\n• Developed a cryptographic challenge-response verification system\n• Implemented digital signature verification for all supply chain participants\n• Created tamper-proof audit trails for all product movements and transfers\n• Integrated multi-factor authentication for high-security operations\n\n**Technical Implementation:**\n• Built on Ethereum with Solidity smart contracts and Hardhat development environment\n• Created a responsive front-end with React and Web3.js for blockchain interaction\n• Implemented IPFS integration for decentralized document and certificate storage\n• Designed a RESTful API for integration with existing supply chain systems\n\n**Business Impact:**\n• Reduced verification time by 87% compared to traditional supply chain processes\n• Eliminated counterfeit products through cryptographic product authentication\n• Provided end-to-end visibility across the entire supply chain\n• Enabled real-time tracking and verification accessible to all stakeholders",
+  "tools": ["Solidity", "Web3.js", "React", "Node.js", "Hardhat", "Ethereum", "IPFS"],
+  "features": [
+    "Smart contract proxy pattern",
+    "Cryptographic product verification",
+    "Decentralized document storage",
+    "Multi-signature approval workflows",
+    "Real-time tracking dashboard"
+  ],
+  "previewImage": "/projects/Blockchain-Supply-Chain/demo-app/dummy_supply_chain_dashboard.svg",
+  "images": [
+    {
+      "src": "/projects/Blockchain-Supply-Chain/demo-app/dummy_supply_chain_dashboard.svg",
+      "title": "Supply Chain Dashboard",
+      "description": "Real-time visualization of product journey times, verification rates, and supply chain incidents"
+    },
+    {
+      "src": "/projects/Blockchain-Supply-Chain/demo-app/dummy_smart_contract_architecture.svg",
+      "title": "Smart Contract Architecture",
+      "description": "Multi-layered smart contract architecture with upgradeable proxy pattern for future-proof deployment"
+    },
+    {
+      "src": "/projects/Blockchain-Supply-Chain/demo-app/dummy_authentication_flow.svg",
+      "title": "Authentication Flow",
+      "description": "Step-by-step authentication process with success rates at each verification stage"
+    }
+  ],
+  "demoUrl": "/projects/Blockchain-Supply-Chain/demo-app/index.html",
+  "githubUrl": "https://github.com/Jakakus/Blockchain-Supply-Chain"
+} 

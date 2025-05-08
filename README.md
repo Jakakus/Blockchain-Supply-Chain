@@ -1,76 +1,109 @@
 # Blockchain Supply Chain Tracker
 
-A comprehensive Ethereum-based supply chain tracking and management system that brings transparency and trust to product journeys from manufacturer to consumer.
+A secure and transparent supply chain tracking system built on Ethereum blockchain technology, enabling product authentication, real-time tracking, and tamper-proof documentation throughout the supply chain journey.
 
-![Supply Chain Dashboard](./public/images/supply_chain_dashboard.png)
+## Overview
 
-## Project Overview
+The Blockchain Supply Chain Tracker addresses critical challenges in modern supply chains:
+- Product counterfeiting and authenticity verification
+- Supply chain transparency and traceability
+- Secure data sharing between participants
+- Automated verification and compliance
 
-This project demonstrates how blockchain technology can solve real business challenges in logistics and product authentication, creating an immutable record of a product's journey through the supply chain.
+By leveraging blockchain technology, this project creates an immutable record of a product's journey from manufacturer to end consumer, establishing trust and transparency across the entire supply chain.
 
-### Blockchain Architecture & Implementation
+## Key Features
 
-- Built on Ethereum with Solidity smart contracts for immutable record-keeping
-- Implemented ERC-721 non-fungible tokens (NFTs) to represent unique product identities
-- Created role-based access control for manufacturers, distributors, retailers, and consumers
-- Designed gas-efficient smart contracts to minimize transaction costs
-- Integrated real-time event logging using blockchain emitted events
+- **Smart Contract Architecture**: Uses an upgradeable proxy pattern for future-proof deployment
+- **Decentralized Product Registry**: Maintains product information on the blockchain
+- **Cryptographic Verification**: Ensures authenticity at each step of the supply chain
+- **Role-Based Access Control**: Granular permissions for different supply chain participants
+- **Event Monitoring**: Real-time tracking of product movements and status changes
+- **Document Management**: Secure storage of certificates and documentation on IPFS
+- **Interactive Dashboard**: Real-time visualization of supply chain metrics and analytics
 
-### Technical Components
+## Technical Stack
 
-- **Smart Contract System:** Multi-layered contract architecture with upgradeable proxy pattern
-- **Authentication Mechanism:** Zero-knowledge proof implementation for privacy-preserving verification
-- **Data Visualization:** Interactive supply chain map showing product journey in real-time
-- **IoT Integration:** Framework for connecting with temperature sensors and RFID readers
-- **Alert System:** Automated notification system for supply chain exceptions
+- **Blockchain**: Ethereum, Solidity, Hardhat
+- **Frontend**: React, Web3.js, HTML/CSS
+- **Backend**: Node.js, Express
+- **Storage**: IPFS for decentralized document storage
+- **Development**: Hardhat, Ethers.js, Waffle for testing
 
-### Analytics & Insights
+## Smart Contract Architecture
 
-- **Real-time Dashboards:** Visualization of product journey times, delays, and exceptions
-- **Predictive Models:** Machine learning algorithms to predict potential delays based on historical blockchain data
-- **Anomaly Detection:** Statistical models to identify unusual patterns in supply chain data
+The project implements a sophisticated smart contract architecture:
 
-## Key Visualizations
-
-### Supply Chain Dashboard
-![Supply Chain Dashboard](./public/images/supply_chain_dashboard.png)
-
-### Smart Contract Architecture
-![Smart Contract Architecture](./public/images/smart_contract_architecture.png)
-
-### Authentication Flow
-![Authentication Flow](./public/images/authentication_flow.png)
-
-## Business Impact
-
-This system has been particularly effective for high-value products where authenticity verification is critical. The implementation demonstrated:
-
-- 43% reduction in counterfeiting incidents
-- 28% improvement in inventory management efficiency
-- Enhanced analytics capabilities through immutable blockchain records
-
-## Technical Innovations
-
-The project pioneered a hybrid on-chain/off-chain data architecture that maintains data integrity while minimizing blockchain transaction costs. This approach allows unlimited scalability while ensuring that critical checkpoints and authentication data remain secured by the Ethereum blockchain.
-
-## Technologies Used
-
-- Solidity
-- Ethereum
-- Web3.js
-- React
-- Node.js
-
-## Repository Structure
-
-- `/contracts` - Solidity smart contracts for supply chain tracking
-- `/src` - Frontend and backend code for the application
-- `/public` - Static assets and visualizations
+1. **Proxy Pattern**: Allows contract upgrades while preserving data and state
+2. **Access Control**: Role-based permissions using OpenZeppelin libraries
+3. **Product Registry**: Manages product creation, details, and ownership
+4. **Supply Chain Registry**: Tracks movements, transfers, and status changes
+5. **Verification Contracts**: Handles cryptographic verification of products
 
 ## Getting Started
 
-Instructions for setting up and running the project coming soon.
+### Prerequisites
+
+- Node.js (v14 or higher)
+- NPM (v6 or higher)
+- Metamask browser extension
+- Hardhat
+
+### Installation
+
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/blockchain-supply-chain.git
+   cd blockchain-supply-chain
+   ```
+
+2. Install dependencies
+   ```
+   npm install
+   ```
+
+3. Compile smart contracts
+   ```
+   npx hardhat compile
+   ```
+
+4. Run local blockchain network
+   ```
+   npx hardhat node
+   ```
+
+5. Deploy contracts
+   ```
+   npx hardhat run scripts/deploy.js --network localhost
+   ```
+
+6. Start the frontend application
+   ```
+   npm run start
+   ```
+
+## Demo Application
+
+The project includes a demo application showcasing key features:
+
+- **Dashboard**: Real-time metrics of active shipments and verification status
+- **Tracking Interface**: Monitor product location and status in real-time
+- **Registration Form**: Register new products on the blockchain
+- **Verification Tool**: Verify product authenticity via QR codes or IDs
+
+## Future Development
+
+- Integration with IoT sensors for automated tracking updates
+- Mobile application for on-the-go verification
+- Multi-chain implementation for cross-chain compatibility
+- AI-powered analytics for supply chain optimization
 
 ## License
 
-MIT 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- OpenZeppelin for secure smart contract libraries
+- IPFS for decentralized storage capabilities
+- The Ethereum community for resources and documentation 

@@ -1,54 +1,63 @@
 const { ethers, upgrades } = require('hardhat');
 
 async function main() {
-  console.log('Deploying ProductTracker contract...');
+  console.log('Deploying SupplyChainTracker contract...');
 
-  // Get the contract factory
-  const ProductTracker = await ethers.getContractFactory('ProductTracker');
-  const ProductTrackerProxy = await ethers.getContractFactory('ProductTrackerProxy');
+  // Get the ContractFactory
+  const SupplyChainTracker = await ethers.getContractFactory('SupplyChainTracker');
   
-  // Deploy the implementation contract
-  const productTrackerImpl = await ProductTracker.deploy();
-  await productTrackerImpl.deployed();
-  console.log('ProductTracker implementation deployed to:', productTrackerImpl.address);
-  
-  // Encode initialization data
-  const initData = ProductTracker.interface.encodeFunctionData('initialize', ['SupplyChainNFT', 'SCN']);
-  
-  // Get the deployer account
+  // Get the first account as the deployer
   const [deployer] = await ethers.getSigners();
+  console.log('Deploying contracts with the account:', deployer.address);
   
-  // Deploy the proxy contract
-  const proxy = await ProductTrackerProxy.deploy(
-    productTrackerImpl.address,
-    deployer.address,
-    initData
+  // Deploy as upgradeable contract
+  console.log('Deploying SupplyChainTracker...');
+  const supplyChainTracker = await upgrades.deployProxy(
+    SupplyChainTracker, 
+    [deployer.address], // Initialize with deployer as admin
+    { 
+      initializer: 'initialize',
+      kind: 'uups' 
+    }
   );
-  await proxy.deployed();
-  console.log('ProductTrackerProxy deployed to:', proxy.address);
   
-  // Create a ProductTracker instance with the proxy address
-  const productTracker = ProductTracker.attach(proxy.address);
+  await supplyChainTracker.deployed();
+  console.log('SupplyChainTracker deployed to:', supplyChainTracker.address);
+
+  // Add some roles for testing
+  console.log('Setting up test roles...');
+  const accounts = await ethers.getSigners();
   
-  // Grant roles to the deployer for testing
-  const MANUFACTURER_ROLE = await productTracker.MANUFACTURER_ROLE();
-  const DISTRIBUTOR_ROLE = await productTracker.DISTRIBUTOR_ROLE();
-  const RETAILER_ROLE = await productTracker.RETAILER_ROLE();
+  // Add manufacturer role to your MetaMask address
+  const userMetaMaskAddress = '0x73072b26Be3C7d344dc3F4101eb8B7DE19148A41';
+  await supplyChainTracker.addManufacturer(userMetaMaskAddress);
+  console.log('Added manufacturer role to MetaMask address:', userMetaMaskAddress);
   
-  console.log('Granting roles to deployer...');
+  // Set up a manufacturer role for the second account
+  if (accounts.length > 1) {
+    await supplyChainTracker.addManufacturer(accounts[1].address);
+    console.log('Added manufacturer role to:', accounts[1].address);
+  }
   
-  // Grant each role to the deployer
-  await productTracker.grantRole(MANUFACTURER_ROLE, deployer.address);
-  await productTracker.grantRole(DISTRIBUTOR_ROLE, deployer.address);
-  await productTracker.grantRole(RETAILER_ROLE, deployer.address);
+  // Set up a distributor role for the third account
+  if (accounts.length > 2) {
+    await supplyChainTracker.addDistributor(accounts[2].address);
+    console.log('Added distributor role to:', accounts[2].address);
+  }
   
-  console.log('Roles granted to:', deployer.address);
-  console.log('Deployment complete!');
+  // Set up a retailer role for the fourth account
+  if (accounts.length > 3) {
+    await supplyChainTracker.addRetailer(accounts[3].address);
+    console.log('Added retailer role to:', accounts[3].address);
+  }
+  
+  console.log('Deployment and setup completed successfully!');
 }
 
+// Execute the deployment
 main()
   .then(() => process.exit(0))
   .catch((error) => {
-    console.error(error);
+    console.error('Error during deployment:', error);
     process.exit(1);
   }); 

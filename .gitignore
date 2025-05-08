@@ -42,4 +42,21 @@ yarn-error.log*
 
 # OS files
 .DS_Store
+Thumbs.db
+
+# Hardhat files
+.openzeppelin
+
+# Build files
+dist
+build
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
 Thumbs.db 
